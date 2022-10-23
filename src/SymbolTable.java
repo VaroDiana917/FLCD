@@ -13,11 +13,11 @@ public class SymbolTable {
         return hashSum%13;
     }
 
-    public SymbolTable(int n){
+    public SymbolTable(){
         this.st_size=0;
-        this.st=new ArrayList<>(n);
-        for(int i=0;i<n;i++){
-            this.st.add(new ArrayList<>(n));
+        this.st=new ArrayList<>(13);
+        for(int i=0;i<13;i++){
+            this.st.add(new ArrayList<>());
         }
     }
 

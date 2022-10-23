@@ -2,7 +2,7 @@ import java.util.AbstractMap;
 
 public class Main {
     public static void main(String[] args) {
-        SymbolTable st = new SymbolTable(10);
+        SymbolTable st = new SymbolTable();
         String[] symbols = {"abc", "a", "bc", "bca", "1234", "2341", "2341", "abc"};
 
         for (String symbol : symbols) {
