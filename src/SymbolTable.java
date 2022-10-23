@@ -7,13 +7,13 @@ public class SymbolTable {
     public int hashFunction(String symbol){
         int hashSum=0;
         for(int i=0; i<symbol.length(); i++){
-            hashSum += (int)symbol.charAt(i);
+            hashSum += symbol.charAt(i);
         }
         return hashSum%13;
     }
 
     public SymbolTable(int n){
-        this.st_size=n*n;
+        this.st_size=0;
         this.st=new ArrayList<>(n);
         for(int i=0;i<n;i++){
             this.st.add(new ArrayList<>(n));
@@ -24,6 +24,7 @@ public class SymbolTable {
         if(!this.existsInST(symbol)){
             int hashKey = this.hashFunction(symbol);
             this.st.get(hashKey).add(symbol);
+            this.st_size++;
             System.out.println("Added "+ symbol +" to Symbol Table");
         }
         else System.out.println("Symbol already exists");
