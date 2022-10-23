@@ -1,3 +1,4 @@
+import java.util.AbstractMap;
 import java.util.ArrayList;
 
 public class SymbolTable {
@@ -32,6 +33,15 @@ public class SymbolTable {
 
     public boolean existsInST(String symbol){
         return this.st.get(this.hashFunction(symbol)).contains(symbol);
+    }
+
+    public AbstractMap.SimpleEntry<Integer, Integer> getPosition(String symbol){
+        if(existsInST(symbol)){
+            int hashValue = hashFunction(symbol);
+            int position = this.st.get(hashValue).indexOf(symbol);
+            return new AbstractMap.SimpleEntry<>(hashValue, position);
+        }
+        else return new AbstractMap.SimpleEntry<>(null,null);
     }
 
     public void printST(){
