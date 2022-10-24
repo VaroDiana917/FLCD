@@ -1,3 +1,5 @@
+import domain.SymbolTable;
+
 import java.util.AbstractMap;
 
 public class Main {
