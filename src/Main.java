@@ -1,3 +1,4 @@
+import domain.MyScanner;
 import domain.SymbolTable;
 
 import java.util.AbstractMap;
@@ -22,5 +23,16 @@ public class Main {
 
         pos = st.getPosition("bac");
         System.out.println("Position of 'bac': "+pos.getKey()+", "+pos.getValue());
+
+
+        System.out.println("-------------------------------------");
+        MyScanner scanner = new MyScanner("src/problems/p1err.txt");
+        scanner.scan();
+        scanner = new MyScanner("src/problems/p1.txt");
+        scanner.scan();
+        scanner = new MyScanner("src/problems/p2.txt");
+        scanner.scan();
+        scanner = new MyScanner("src/problems/p3.txt");
+        scanner.scan();
     }
 }

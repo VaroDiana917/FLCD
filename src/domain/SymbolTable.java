@@ -28,9 +28,7 @@ public class SymbolTable {
             int hashKey = this.hashFunction(symbol);
             this.st.get(hashKey).add(symbol);
             this.st_size++;
-            System.out.println("Added "+ symbol +" to Symbol Table");
         }
-        else System.out.println("Symbol already exists");
     }
 
     public boolean existsInST(String symbol){
@@ -50,5 +48,12 @@ public class SymbolTable {
         System.out.println(this.st);
     }
 
-
+    @Override
+    public String toString() {
+        StringBuilder str = new StringBuilder();
+        for (ArrayList<String> token : st){
+            str.append(token);
+        }
+        return str.toString();
+    }
 }

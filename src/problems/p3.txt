@@ -1,0 +1,13 @@
+VAR
+sum, nrList, nr: INTEGER;
+BEGIN
+sum:=0;
+READ (nrList);
+WHILE (nrList>0) DO
+BEGIN
+READ (nr);
+sum:=sum+nr;
+nrList:=nrList-1;
+END;
+WRITE(sum);
+END

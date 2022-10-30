@@ -1,0 +1,180 @@
+
+
+MyPIF:
+Token: VAR
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (12, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 1)
+
+Token: :
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: INTEGER
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (9, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: READ
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (12, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WHILE
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (12, 0)
+
+Token: >
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (9, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: DO
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: READ
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 1)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: +
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (12, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (12, 0)
+
+Token: -
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (10, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WRITE
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
