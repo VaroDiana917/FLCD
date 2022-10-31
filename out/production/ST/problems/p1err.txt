@@ -1,10 +1,10 @@
 VAR
--12,n2,n3,max: INTEGER;
+1n,n2,n3,max: INTEGER;
 BEGIN
 READ (n1,n2,n3);
 IF (max<n1) THEN BEGIN max:=n1; END;
 IF (max<n2) THEN BEGIN max:=n2; END;
 IF (max<n3) THEN BEGIN max:=n3; END;
-WRITE("Max_number_is_");
+WRITE(Max_number_is_");
 WRITE(max);
 END

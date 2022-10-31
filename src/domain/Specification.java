@@ -21,9 +21,7 @@ public class Specification {
     public List<String> getSeparatorsForRegex() {return separatorsForRegex;}
     public List<String> getOperatorsForRegex() {return operatorsForRegex;}
 
-    public boolean isASeparator(String token){
-        return separators.contains(token);
-    }
+    public boolean isASeparator(String token){return separators.contains(token);}
 
     public boolean isAnOperator(String token){
         return operators.contains(token);

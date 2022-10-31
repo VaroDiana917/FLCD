@@ -57,12 +57,12 @@ public class MyScanner {
             reader.close();
             if(isOk){
                 System.out.println("Everything is ok with "+path+"\n"+pif+"Identifier ST:\n"+identifiers+"\n\nConstants ST:\n"+constants);
-                FileWriter myWriter = new FileWriter("src/out/PIF.out");
+                FileWriter myWriter = new FileWriter("src/out/PIF.out", true);
                 myWriter.write(""+pif);
                 myWriter.close();
 
-                FileWriter myWriter2 = new FileWriter("src/out/ST.out");
-                myWriter2.write("Identifier ST:\n"+identifiers+"\n\nConstants ST:\n"+constants);
+                FileWriter myWriter2 = new FileWriter("src/out/ST.out", true);
+                myWriter2.write("\n\nIdentifier ST:\n"+identifiers+"\nConstants ST:\n"+constants);
                 myWriter2.close();
             }
 
