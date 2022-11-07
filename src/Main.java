@@ -28,11 +28,11 @@ public class Main {
         System.out.println("-------------------------------------");
         MyScanner scanner = new MyScanner("src/problems/p1err.txt");
         scanner.scan();
-        scanner = new MyScanner("src/problems/p1.txt");
-        scanner.scan();
-        scanner = new MyScanner("src/problems/p2.txt");
-        scanner.scan();
-        scanner = new MyScanner("src/problems/p3.txt");
-        scanner.scan();
+        MyScanner scanner1 = new MyScanner("src/problems/p1.txt");
+        scanner1.scan();
+        MyScanner scanner2 = new MyScanner("src/problems/p2.txt");
+        scanner2.scan();
+        MyScanner scanner3 = new MyScanner("src/problems/p3.txt");
+        scanner3.scan();
     }
 }

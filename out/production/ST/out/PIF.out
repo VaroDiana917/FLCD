@@ -1,282 +1,66 @@
 
 
 MyPIF:
-Token: VAR
-Identifier: (-1, -1)
-
 Token: Identifier
-Identifier: (3, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (4, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (5, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (1, 0)
-
-Token: :
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: INTEGER
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: BEGIN
-Identifier: (-1, -1)
-
-Token: READ
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: (
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (3, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (4, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (5, 0)
-
-Token: )
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: IF
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: (
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (1, 0)
-
-Token: <
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (3, 0)
-
-Token: )
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: THEN
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: BEGIN
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (1, 0)
+Identifier: (10, 0)
 
 Token: :=
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (3, 0)
+Identifier: (6, 0)
 
-Token: ;
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: END
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: IF
-Identifier: (-1, -1)
-
-Token:  
+Token: %
 Identifier: (-1, -1)
 
 Token: (
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (1, 0)
-
-Token: <
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (4, 0)
+Identifier: (0, 0)
 
 Token: )
 Identifier: (-1, -1)
 
-Token:  
-Identifier: (-1, -1)
-
-Token: THEN
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: BEGIN
-Identifier: (-1, -1)
-
-Token:  
+Token: ;
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (1, 0)
+Identifier: (10, 0)
 
 Token: :=
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (4, 0)
+Identifier: (6, 0)
 
-Token: ;
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: END
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: IF
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: (
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (1, 0)
-
-Token: <
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (5, 0)
-
-Token: )
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: THEN
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: BEGIN
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (1, 0)
-
-Token: :=
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (5, 0)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: END
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: WRITE
+Token: %
 Identifier: (-1, -1)
 
 Token: (
 Identifier: (-1, -1)
 
 Token: Constant
-Identifier: (8, 0)
+Identifier: (11, 0)
 
 Token: )
 Identifier: (-1, -1)
 
 Token: ;
-Identifier: (-1, -1)
-
-Token: WRITE
-Identifier: (-1, -1)
-
-Token: (
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (1, 0)
+Identifier: (7, 0)
 
-Token: )
+Token: :=
 Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
 
 Token: ;
 Identifier: (-1, -1)
 
-Token: END
-Identifier: (-1, -1)
-
-
-
-MyPIF:
 Token: VAR
 Identifier: (-1, -1)
 
@@ -400,8 +184,8 @@ Identifier: (7, 0)
 Token: :=
 Identifier: (-1, -1)
 
-Token: Identifier
-Identifier: (10, 0)
+Token: Constant
+Identifier: (3, 0)
 
 Token: ;
 Identifier: (-1, -1)
@@ -433,29 +217,83 @@ Identifier: (-1, -1)
 
 
 MyPIF:
-Token: VAR
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (0, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (11, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
 Identifier: (-1, -1)
 
 Token: Identifier
 Identifier: (3, 0)
 
-Token: ,
+Token: ;
 Identifier: (-1, -1)
 
-Token:  
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (12, 0)
-
-Token: ,
-Identifier: (-1, -1)
-
-Token:  
+Token: VAR
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (3, 1)
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
 
 Token: :
 Identifier: (-1, -1)
@@ -472,18 +310,6 @@ Identifier: (-1, -1)
 Token: BEGIN
 Identifier: (-1, -1)
 
-Token: Identifier
-Identifier: (3, 0)
-
-Token: :=
-Identifier: (-1, -1)
-
-Token: Constant
-Identifier: (9, 0)
-
-Token: ;
-Identifier: (-1, -1)
-
 Token: READ
 Identifier: (-1, -1)
 
@@ -494,7 +320,13 @@ Token: (
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (12, 0)
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
 
 Token: )
 Identifier: (-1, -1)
@@ -512,7 +344,7 @@ Token: (
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (12, 0)
+Identifier: (7, 0)
 
 Token: >
 Identifier: (-1, -1)
@@ -532,56 +364,44 @@ Identifier: (-1, -1)
 Token: BEGIN
 Identifier: (-1, -1)
 
-Token: READ
-Identifier: (-1, -1)
-
-Token:  
-Identifier: (-1, -1)
-
-Token: (
-Identifier: (-1, -1)
-
 Token: Identifier
-Identifier: (3, 1)
-
-Token: )
-Identifier: (-1, -1)
-
-Token: ;
-Identifier: (-1, -1)
-
-Token: Identifier
-Identifier: (3, 0)
+Identifier: (10, 0)
 
 Token: :=
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (3, 0)
+Identifier: (6, 0)
 
-Token: +
+Token: %
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (3, 1)
+Identifier: (7, 0)
 
 Token: ;
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (12, 0)
+Identifier: (6, 0)
 
 Token: :=
 Identifier: (-1, -1)
 
 Token: Identifier
-Identifier: (12, 0)
+Identifier: (7, 0)
 
-Token: -
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
 Identifier: (-1, -1)
 
 Token: Constant
-Identifier: (10, 0)
+Identifier: (3, 0)
 
 Token: ;
 Identifier: (-1, -1)
@@ -599,7 +419,439 @@ Token: (
 Identifier: (-1, -1)
 
 Token: Identifier
+Identifier: (6, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
+
+
+MyPIF:
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (0, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (11, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
 Identifier: (3, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: VAR
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: INTEGER
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: READ
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WHILE
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: >
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (9, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: DO
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (3, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WRITE
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
+
+
+MyPIF:
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (0, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (11, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (3, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: VAR
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: INTEGER
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: READ
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: ,
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WHILE
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: >
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (9, 0)
+
+Token: )
+Identifier: (-1, -1)
+
+Token:  
+Identifier: (-1, -1)
+
+Token: DO
+Identifier: (-1, -1)
+
+Token: BEGIN
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (10, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: %
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (7, 0)
+
+Token: :=
+Identifier: (-1, -1)
+
+Token: Constant
+Identifier: (3, 0)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: END
+Identifier: (-1, -1)
+
+Token: ;
+Identifier: (-1, -1)
+
+Token: WRITE
+Identifier: (-1, -1)
+
+Token: (
+Identifier: (-1, -1)
+
+Token: Identifier
+Identifier: (6, 0)
 
 Token: )
 Identifier: (-1, -1)

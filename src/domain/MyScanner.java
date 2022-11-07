@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
-import java.util.regex.Pattern;
 
 
 public class MyScanner {
@@ -33,21 +32,85 @@ public class MyScanner {
                 String line = reader.nextLine();
                 List<String> tokens = tokenize(line);
 
-                for (String token : tokens) {
-                    if (langSpecs.isAReservedWord(token) || langSpecs.isAnOperator(token) || langSpecs.isASeparator(token)) {
-                        pif.addReservedWord(token);
-                    } else if (langSpecs.isIdentifier(token)) {
-                        identifiers.addInST(token);
-                        AbstractMap.SimpleEntry<Integer, Integer> pos = identifiers.getPosition(token);
+                for (int i = 0; i<tokens.toArray().length; i++) {
+                    if(i+2<tokens.toArray().length && i-2>=0){
+                        if((Objects.equals(tokens.get(i - 2), "+") || Objects.equals(tokens.get(i - 2), "-") || Objects.equals(tokens.get(i - 2), "*") || Objects.equals(tokens.get(i - 2), "/") || Objects.equals(tokens.get(i - 2), "%")) &&
+                                langSpecs.isOpenSeparator(tokens.get(i-1)) &&
+                                (Objects.equals(tokens.get(i), "-") || Objects.equals(tokens.get(i), "+")) &&
+                                (langSpecs.isANumber(tokens.get(i+1)) || langSpecs.isIdentifier(tokens.get(i+1))) &&
+                                langSpecs.isClosedSeparator(tokens.get(i+2))
+                        ){
+                            if(langSpecs.isANumber(tokens.get(i+1))) {
+                                constants.addInST(tokens.get(i)+tokens.get(i+1));
+                                AbstractMap.SimpleEntry<Integer, Integer> pos = constants.getPosition(tokens.get(i)+tokens.get(i+1));
+                                pif.addConstant(pos);
+                            }
+                            else if(langSpecs.isIdentifier(tokens.get(i+1))) {
+                                identifiers.addInST(tokens.get(i)+tokens.get(i+1));
+                                AbstractMap.SimpleEntry<Integer, Integer> pos = identifiers.getPosition(tokens.get(i)+tokens.get(i+1));
+                                pif.addIdentifier(pos);
+                            }
+                            i=i+2;
+                        }
+                    }
+                    if(i+1<tokens.toArray().length && i-1>=0){
+                        if((Objects.equals(tokens.get(i - 1), "!=") || Objects.equals(tokens.get(i - 1), ":=") || Objects.equals(tokens.get(i - 1), "=") || Objects.equals(tokens.get(i - 1), ">") || Objects.equals(tokens.get(i - 1), "<") || Objects.equals(tokens.get(i - 1), ">=") || Objects.equals(tokens.get(i - 1), "<=")) &&
+                                (Objects.equals(tokens.get(i), "-") || Objects.equals(tokens.get(i), "+")) &&
+                                (langSpecs.isANumber(tokens.get(i+1)) || langSpecs.isIdentifier(tokens.get(i+1)))
+                        ){
+                            if(langSpecs.isANumber(tokens.get(i+1))) {
+                                constants.addInST(tokens.get(i)+tokens.get(i+1));
+                                AbstractMap.SimpleEntry<Integer, Integer> pos = constants.getPosition(tokens.get(i)+tokens.get(i+1));
+                                pif.addConstant(pos);
+                            }
+                            else if(langSpecs.isIdentifier(tokens.get(i+1))) {
+                                identifiers.addInST(tokens.get(i)+tokens.get(i+1));
+                                AbstractMap.SimpleEntry<Integer, Integer> pos = identifiers.getPosition(tokens.get(i)+tokens.get(i+1));
+                                pif.addIdentifier(pos);
+                            }
+                            i=i+2;
+                        }
+                        else if(Objects.equals(tokens.get(i - 1), "+") || Objects.equals(tokens.get(i - 1), "-") || Objects.equals(tokens.get(i - 1), "*") || Objects.equals(tokens.get(i - 1), "/") || Objects.equals(tokens.get(i - 1), "%")){
+                            if ((Objects.equals(tokens.get(i), "-") || Objects.equals(tokens.get(i), "+")) &&
+                                    (langSpecs.isANumber(tokens.get(i+1)) || langSpecs.isIdentifier(tokens.get(i+1)))){
+
+                                System.out.println("ERROR in " + path + "! Line: " + lineNr + "; token: " + tokens.get(i-1)+tokens.get(i)+tokens.get(i+1));
+                                isOk=false;
+
+                                i=i+2;
+                            }
+                        }
+                        else if(!langSpecs.isIdentifier(tokens.get(i-1)) && !langSpecs.isConstant(tokens.get(i-1)))
+                            if ((Objects.equals(tokens.get(i), "-") || Objects.equals(tokens.get(i), "+")) &&
+                                (langSpecs.isANumber(tokens.get(i+1)) || langSpecs.isIdentifier(tokens.get(i+1)))){
+                                if(langSpecs.isANumber(tokens.get(i+1))) {
+                                    constants.addInST(tokens.get(i)+tokens.get(i+1));
+                                    AbstractMap.SimpleEntry<Integer, Integer> pos = constants.getPosition(tokens.get(i)+tokens.get(i+1));
+                                    pif.addConstant(pos);
+                                }
+                                else if(langSpecs.isIdentifier(tokens.get(i+1))) {
+                                    identifiers.addInST(tokens.get(i)+tokens.get(i+1));
+                                    AbstractMap.SimpleEntry<Integer, Integer> pos = identifiers.getPosition(tokens.get(i)+tokens.get(i+1));
+                                    pif.addIdentifier(pos);
+                                }
+                                i=i+2;
+                        }
+
+                    }
+                    if (langSpecs.isAReservedWord(tokens.get(i)) || langSpecs.isAnOperator(tokens.get(i)) || langSpecs.isASeparator(tokens.get(i))) {
+                        pif.addReservedWord(tokens.get(i));
+                    } else if (langSpecs.isIdentifier(tokens.get(i))) {
+                        identifiers.addInST(tokens.get(i));
+                        AbstractMap.SimpleEntry<Integer, Integer> pos = identifiers.getPosition(tokens.get(i));
                         pif.addIdentifier(pos);
 
-                    } else if (langSpecs.isConstant(token)) {
-                        constants.addInST(token);
-                        AbstractMap.SimpleEntry<Integer, Integer> pos = constants.getPosition(token);
+                    } else if (langSpecs.isConstant(tokens.get(i))) {
+                        constants.addInST(tokens.get(i));
+                        AbstractMap.SimpleEntry<Integer, Integer> pos = constants.getPosition(tokens.get(i));
                         pif.addConstant(pos);
                     } else {
                         isOk = false;
-                        System.out.println("ERROR in " + path + "! Line: " + lineNr + "; token: " + token);
+                        System.out.println("ERROR in " + path + "! Line: " + lineNr + "; token: " + tokens.get(i));
                     }
                 }
 
@@ -89,15 +152,6 @@ public class MyScanner {
                     if (Objects.equals(result[i + 1], "=")) {
                         tokens.add(result[i] + result[i + 1]);
                         i = i + 1;
-                    } else tokens.add(result[i]);
-                } else if (i - 1 >= 0) {
-                    if (langSpecs.isAnOperator(result[i - 1])) {
-                        if (Objects.equals(result[i], "+") || Objects.equals(result[i], "-")) {
-                            if (langSpecs.isANumber(result[i + 1])) {
-                                tokens.add(result[i] + result[i + 1]);
-                                i = i + 1;
-                            } else tokens.add(result[i]);
-                        } else tokens.add(result[i]);
                     } else tokens.add(result[i]);
                 } else tokens.add(result[i]);
             } else tokens.add(result[i]);

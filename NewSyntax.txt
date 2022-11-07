@@ -42,7 +42,7 @@ Lexic:
             char:=letter|digit|specialChar
             specialChar:= "!" | "@" | "#" | "&" | "*" | "(" | ")" | "-" | "_" | "=" | "+" | "," | "." | "?" | "/" | ";" | ":" | "'" | """ | "\"
 -------------------------------------------------------------------
-Sintactical rules: (file Syntax.in)
+Syntactical rules: (file Syntax.in)
 program ::= "VAR" decllist ";" cmpdstmt
 decllist ::= declaration | declaration ";" decllist
 declaration ::= identlist ": " type

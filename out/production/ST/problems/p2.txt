@@ -1,3 +1,6 @@
+r:=a%(-b);
+r:=a%(-845);
+b:=-r;
 VAR
 a,b,r: INTEGER;
 BEGIN
@@ -6,7 +9,7 @@ WHILE (b>0) DO
 BEGIN
 r:=a%b;
 a:=b;
-b:=r;
+b:=-14;
 END;
 WRITE(a);
 END

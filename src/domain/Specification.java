@@ -4,6 +4,8 @@ import java.util.*;
 
 public class Specification {
     private final List<String> separators;
+    private final List<String> openSeparators;
+    private final List<String> closedSeparators;
     private final List<String> separatorsForRegex;
     private final List<String> operators;
     private final List<String> operatorsForRegex;
@@ -12,6 +14,8 @@ public class Specification {
     public Specification() {
         this.separatorsForRegex = Arrays.asList("\\(", "\\)", "\\[", "\\]", "\\{", "\\}", "\\:", "\\;", " ", ",");
         this.separators = Arrays.asList("(", ")", "[", "]", "{", "}", ":", ";", " ", ",");
+        this.openSeparators = Arrays.asList("(","[", "{");
+        this.closedSeparators = Arrays.asList(")","]", "}");
         this.operatorsForRegex = Arrays.asList("\\+", "-", "\\*", "/", ":=", "=", "!=", "<", ">", "<=", ">=", "%" );
         this.operators = Arrays.asList("+", "-", "*", "/", ":=", "=", "!=", "<", ">", "<=", ">=", "%" );
         this.reservedWords = Arrays.asList("ARRAY", "CHAR", "CONST", "DO", "ELSE", "IF", "INTEGER", "OF", "PROGRAM", "READ", "THEN", "VAR", "WHILE", "WRITE", "BEGIN", "END" );
@@ -25,6 +29,12 @@ public class Specification {
 
     public boolean isAnOperator(String token){
         return operators.contains(token);
+    }
+    public boolean isOpenSeparator(String token){
+        return openSeparators.contains(token);
+    }
+    public boolean isClosedSeparator(String token){
+        return closedSeparators.contains(token);
     }
 
     public boolean isAReservedWord(String token){
