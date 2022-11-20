@@ -87,21 +87,37 @@ public class FiniteAutomaton {
         StringBuilder builder = new StringBuilder();
         builder.append("Transitions: \n");
         transitions.forEach((K, V) -> {
-            builder.append("<").append(K.getKey()).append(",").append(K.getValue()).append("> -> ").append(V).append("\n");
+            builder.append("[")
+                    .append(K.getKey())
+                    .append("]")
+                    .append(" ----")
+                    .append(K.getValue())
+                    .append("---> ")
+                    .append(V)
+                    .append("\n");
         });
 
         return builder.toString();
     }
 
-
-    @Override
-    public String toString() {
-        return "FiniteAutomaton{" +
-                "alphabet=" + alphabet +
-                ", states=" + states +
-                ", finalStates=" + finalStates +
-                ", initialState='" + initialState + '\'' +
-                ", transitions=" + transitions +
-                '}';
+    public boolean checkIfDFA(){
+        return this.transitions.values().stream().noneMatch(list -> list.size() > 1);
     }
+
+    public boolean checkSequence(String sequence){
+        if(sequence.length() == 0)
+            return finalStates.contains(initialState);
+
+        String state = initialState;
+        for(int i=0;i<sequence.length();++i){
+            AbstractMap.SimpleEntry<String, String> key = new AbstractMap.SimpleEntry<>(state, String.valueOf(sequence.charAt(i)));
+            if(transitions.containsKey(key))
+                state = transitions.get(key).iterator().next();
+            else
+                return false;
+        }
+
+        return finalStates.contains(state);
+    }
+
 }

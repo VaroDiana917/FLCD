@@ -30,7 +30,21 @@ public class Main {
                 case 2 -> System.out.println(fa.writeAlphabet());
                 case 3 -> System.out.println(fa.writeFinalStates());
                 case 4 -> System.out.println(fa.writeTransitions());
-                
+                case 5 -> {
+                    if(fa.checkIfDFA()) {
+                        System.out.println("Your sequence: ");
+                        Scanner scanner2 = new Scanner(System.in);
+                        String sequence = scanner2.nextLine();
+
+                        if (fa.checkSequence(sequence))
+                            System.out.println("Sequence is valid");
+                        else
+                            System.out.println("Invalid sequence");
+                    }
+                    else {
+                        System.out.println("FA is not deterministic.");
+                    }
+                }
             }
             System.out.println();
             printMenu();
