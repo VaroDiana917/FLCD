@@ -12,34 +12,26 @@ public class Grammar {
         readFromFile(filename);
     }
 
+    private HashSet<String> splitBySpace(String input){
+        String[] lineSplit = input.split("=",input.indexOf("="));
+        StringBuilder line = new StringBuilder();
+        for(int i=1;i<lineSplit.length;++i)
+            line.append(lineSplit[i]);
+        StringBuilder builder = new StringBuilder(line.toString());
+        builder.deleteCharAt(1).deleteCharAt(line.length()-2);
+        line = new StringBuilder(builder.toString());
+        return new HashSet<>(Arrays.asList(line.toString().strip().split(" ")));
+    }
+
     private void readFromFile(String filename) {
         try{
             BufferedReader reader = new BufferedReader(new FileReader(filename));
-
-            String input = reader.readLine();
-            String[] NlineSplit = input.split("=",input.indexOf("="));
-            StringBuilder Nline = new StringBuilder();
-            for(int i=1;i<NlineSplit.length;++i)
-                Nline.append(NlineSplit[i]);
-            StringBuilder builder = new StringBuilder(Nline.toString());
-            builder.deleteCharAt(1).deleteCharAt(Nline.length()-2);
-            Nline = new StringBuilder(builder.toString());
-            this.N = new HashSet<>(Arrays.asList(Nline.toString().strip().split(" ")));
-
-            input = reader.readLine();
-            String[] ElineSplit = input.split("=",input.indexOf("="));
-            StringBuilder Eline = new StringBuilder();
-            for(int i=1;i<ElineSplit.length;++i)
-                Eline.append(ElineSplit[i]);
-            builder = new StringBuilder(Eline.toString());
-            builder.deleteCharAt(1).deleteCharAt(Eline.length()-2);
-            Eline = new StringBuilder(builder.toString());
-            this.E = new HashSet<>(Arrays.asList(Eline.toString().strip().split(" ")));
+            this.N = splitBySpace(reader.readLine());
+            this.E = splitBySpace(reader.readLine());
 
             this.S = reader.readLine().split("=")[1].strip();
 
-            // first and last lines for productions will not contain any relevant information, we only need to check starting from the second until the second-last
-            reader.readLine();
+            reader.readLine();//skip over {
             String line = reader.readLine();
             while(line != null){
                 if(!line.equals("}")) {
