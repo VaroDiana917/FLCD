@@ -5,7 +5,7 @@ import java.util.*;
 public class Grammar {
     private Set<String> N = new HashSet<>();
     private Set<String> E = new HashSet<>();
-    private final HashMap<Set<String>, Set<List<String>>> P = new HashMap<>();
+    private final HashMap<ArrayList<String>, Set<List<String>>> P = new HashMap<>();
     private String S = "";
 
     public Grammar(String filename) {
@@ -36,10 +36,9 @@ public class Grammar {
             while(line != null){
                 if(!line.equals("}")) {
                     String[] tokens = line.split("->");
-                    String[] lhsTokens = tokens[0].split(",");
+                    String[] lhsTokens =new String[]{tokens[0]};
                     String[] rhsTokens = tokens[1].split("\\|");
-
-                    Set<String> lhs = new HashSet<>();
+                    ArrayList<String> lhs = new ArrayList<>();
                     for(String l : lhsTokens)
                         lhs.add(l.strip());
                     if(!P.containsKey(lhs))
@@ -85,7 +84,7 @@ public class Grammar {
                 sb.append(lh);
                 count++;
                 if(count<lhs.size())
-                    sb.append(", ");
+                    sb.append(" ");
             }
             sb.append(" -> ");
             count = 0;
@@ -107,7 +106,7 @@ public class Grammar {
     public String printProductionsForNonTerminal(String nonTerminal){
         StringBuilder sb = new StringBuilder();
 
-        for(Set<String> lhs : P.keySet()) {
+        for(ArrayList<String> lhs : P.keySet()) {
             if(lhs.contains(nonTerminal)) {
                 sb.append(nonTerminal).append(" -> ");
                 Set<List<String>> rhs = P.get(lhs);
@@ -128,7 +127,7 @@ public class Grammar {
 
     public boolean checkIfCFG(){
         var checkStartingSymbol = false;
-        for(Set<String> lhs : P.keySet())
+        for(ArrayList<String> lhs : P.keySet())
             if (lhs.contains(S)) {
                 checkStartingSymbol = true;
                 break;
@@ -136,7 +135,7 @@ public class Grammar {
         if(!checkStartingSymbol)
             return false;
 
-        for(Set<String> lhs : P.keySet()){
+        for(ArrayList<String> lhs : P.keySet()){
             if(lhs.size()>1)
                 return false;
             else if(!N.contains(lhs.iterator().next()))
@@ -162,7 +161,7 @@ public class Grammar {
         return E;
     }
 
-    public HashMap<Set<String>, Set<List<String>>> getP() {
+    public HashMap<ArrayList<String>, Set<List<String>>> getP() {
         return P;
     }
 
@@ -171,7 +170,7 @@ public class Grammar {
     }
 
     public Set<List<String>> getProductionForNonterminal(String nonTerminal) {
-        for (Set<String> lhs : P.keySet()) {
+        for (ArrayList<String> lhs : P.keySet()) {
             if (lhs.contains(nonTerminal)) {
                 return P.get(lhs);
             }

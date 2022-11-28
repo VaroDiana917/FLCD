@@ -1,0 +1,26 @@
+N = { program decllist declaration identlist type1 type expression term factor arraydecl stmtlist cmpdstmt stmt simplstmt struct_stmt assignstmt iostmt ifstmt whilestmt condition RELATION }
+E = { VAR ; : , BOOLEAN CHAR INTEGER REAL ARRAY [ ] OF BEGIN END := + - / * % ( ) READ WRITE IF THEN ELSE WHILE DO < <= = <> >= > }
+S = program
+P = {
+program-> VAR decllist ; cmpdstmt
+decllist-> declaration | declaration ; decllist
+declaration-> identlist :  type
+identlist-> IDENTIFIER | IDENTIFIER{,IDENTIFIER}
+type1-> BOOLEAN | CHAR | INTEGER | REAL
+type-> type1 | arraydecl
+expression-> expression + term | expression - term | term
+term-> term * factor | term / factor | term % factor | factor
+factor-> ( expression ) | IDENTIFIER | const
+arraydecl-> ARRAY [ nr ] OF type1
+stmtlist-> stmt | stmt ; stmtlist
+cmpdstmt-> BEGIN stmtlist ; END
+stmt-> simplstmt | structstmt
+simplstmt-> assignstmt | iostmt
+struct_stmt-> cmpdstmt | ifstmt | whilestmt
+assignstmt-> IDENTIFIER := expression
+iostmt-> READ ( identlist ) | WRITE ( identlist ) | WRITE ( const )
+ifstmt-> IF condition THEN stmt [ELSE stmt]
+whilestmt-> WHILE condition DO stmt
+condition-> expression RELATION expression
+RELATION-> < | <= | = | <> | >= | >
+}
