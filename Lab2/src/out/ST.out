@@ -1,16 +1,8 @@
 
 
 Identifier ST:
+0  1   2  3   4   5
 [][max][][n1][n2][n3][][][][][][][]
 Constants ST:
+7
 [][][][][][][][]["Max_number_is_"][][][][]
-
-Identifier ST:
-[][][][][][][a][b][][][r][][]
-Constants ST:
-[][][][][][][][][][0][][][]
-
-Identifier ST:
-[][][][sum, nr][][][][][][][][][nrList]
-Constants ST:
-[][][][][][][][][][0][1][][]

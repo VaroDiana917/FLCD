@@ -5,7 +5,7 @@ import java.util.*;
 public class Grammar {
     private Set<String> N = new HashSet<>();
     private Set<String> E = new HashSet<>();
-    private final HashMap<ArrayList<String>, Set<List<String>>> P = new HashMap<>();
+    private final HashMap<ArrayList<String>, List<List<String>>> P = new HashMap<>();
     private String S = "";
 
     public Grammar(String filename) {
@@ -42,7 +42,7 @@ public class Grammar {
                     for(String l : lhsTokens)
                         lhs.add(l.strip());
                     if(!P.containsKey(lhs))
-                        P.put(lhs,new HashSet<>());
+                        P.put(lhs,new ArrayList<>());
 
                     for(String rhsT : rhsTokens) {
                         ArrayList<String> productionElements = new ArrayList<>();
@@ -109,7 +109,7 @@ public class Grammar {
         for(ArrayList<String> lhs : P.keySet()) {
             if(lhs.contains(nonTerminal)) {
                 sb.append(nonTerminal).append(" -> ");
-                Set<List<String>> rhs = P.get(lhs);
+                List<List<String>> rhs = P.get(lhs);
                 int count = 0;
                 for (List<String> rh : rhs) {
                     for(String r : rh) {
@@ -141,7 +141,7 @@ public class Grammar {
             else if(!N.contains(lhs.iterator().next()))
                 return false;
 
-            Set<List<String>> rhs = P.get(lhs);
+            List<List<String>> rhs = P.get(lhs);
 
             for(List<String> rh : rhs) {
                 for (String r : rh) {
@@ -161,7 +161,7 @@ public class Grammar {
         return E;
     }
 
-    public HashMap<ArrayList<String>, Set<List<String>>> getP() {
+    public HashMap<ArrayList<String>, List<List<String>>> getP() {
         return P;
     }
 
@@ -169,12 +169,12 @@ public class Grammar {
         return S;
     }
 
-    public Set<List<String>> getProductionForNonterminal(String nonTerminal) {
+    public List<List<String>> getProductionForNonterminal(String nonTerminal) {
         for (ArrayList<String> lhs : P.keySet()) {
             if (lhs.contains(nonTerminal)) {
                 return P.get(lhs);
             }
         }
-        return new HashSet<>();
+        return new ArrayList<>();
     }
 }
