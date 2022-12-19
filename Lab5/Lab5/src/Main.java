@@ -27,6 +27,10 @@ public class Main {
 
         System.out.println(parserOutput);
 
+        BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter("src/Files/out1.txt"));
+        bufferedWriter.write(parserOutput.toString());
+        bufferedWriter.close();
+
 
     }
 

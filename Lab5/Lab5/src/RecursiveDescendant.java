@@ -126,6 +126,8 @@ public class RecursiveDescendant {
             gamma2.forEach(s -> configuration.inputStack.push(s));
 
         } else if (configuration.position == 1 && topWorking.split(" ")[0].equals(grammar.getS())) {
+            System.out.println(gamma+topWorking);
+            System.out.println(Integer.parseInt(topWorking.split(" ")[1])+".."+grammar.getProductionForNonterminal(topWorking.split(" ")[0]).size());
             configuration.state = "e";
         } else {
             configuration.workingStack.pop();
