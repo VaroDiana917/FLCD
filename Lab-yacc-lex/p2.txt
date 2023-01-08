@@ -1,0 +1,12 @@
+VAR
+a,b,r: INTEGER;
+BEGIN
+READ (a,b);
+WHILE (b>=1) DO
+BEGIN
+r:=a % b;
+a:=b;
+b:=r;
+END;
+WRITE(a);
+END
