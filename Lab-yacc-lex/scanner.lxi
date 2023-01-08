@@ -1,0 +1,84 @@
+%{
+#include <stdio.h>
+#include <string.h>
+int lines = 0;
+%}
+
+%option noyywrap
+%option caseless
+
+WORD		\'[0-9a-zA-Z]+\'
+NUMBER	[+-]?[1-9][0-9]*|0$
+CONST		{WORD}|{NUMBER}
+ID 		[a-zA-Z][a-zA-Z0-9]*
+
+
+%%
+
+VAR {printf("Reserved word: %s\n", yytext);}
+END {printf( "Reserved word: %s\n", yytext);}
+BOOLEAN {printf( "Reserved word: %s\n", yytext);}
+CHAR {printf( "Reserved word: %s\n", yytext);}
+INTEGER {printf( "Reserved word: %s\n", yytext);}
+REAL {printf( "Reserved word: %s\n", yytext);}
+ARRAY {printf( "Reserved word: %s\n", yytext);}
+OF {printf( "Reserved word: %s\n", yytext);}
+BEGIN {printf( "Reserved word: %s\n", yytext);}
+READ {printf( "Reserved word: %s\n", yytext);}
+WRITE {printf( "Reserved word: %s\n", yytext);}
+IF {printf( "Reserved word: %s\n", yytext);}
+THEN {printf( "Reserved word: %s\n", yytext);}
+ELSE {printf( "Reserved word: %s\n", yytext);}
+WHILE {printf( "Reserved word: %s\n", yytext);}
+DO {printf( "Reserved word: %s\n", yytext);}
+
+
+
+"{"	{printf( "Separator: %s\n", yytext );}
+"}"	{printf( "Separator: %s\n", yytext );}
+"("	{printf( "Separator: %s\n", yytext );}
+")"	{printf( "Separator: %s\n", yytext );}
+"["	{printf( "Separator: %s\n", yytext );}
+"]"	{printf( "Separator: %s\n", yytext );}
+";"	{printf( "Separator: %s\n", yytext );}
+": "	{printf( "Separator: %s\n", yytext );}
+","	{printf( "Separator: %s\n", yytext );}
+"'"	{printf( "Separator: %s\n", yytext );}
+"+"	{printf( "Operator: %s\n", yytext );}
+"-"	{printf( "Operator: %s\n", yytext );}
+"*"	{printf( "Operator: %s\n", yytext );}
+"/"	{printf( "Operator: %s\n", yytext );}
+":="	{printf( "Separator: %s\n", yytext );}
+"%"	{printf( "Operator: %s\n", yytext );}
+"<"	{printf( "Operator: %s\n", yytext );}
+">"	{printf( "Operator: %s\n", yytext );}
+"<="	{printf( "Operator: %s\n", yytext );}
+">="	{printf( "Operator: %s\n", yytext );}
+"!="	{printf( "Operator: %s\n", yytext );}
+"="	{printf( "Operator: %s\n", yytext );}
+
+
+{ID}	{printf( "Identifier: %s\n", yytext);}
+
+{CONST}	{printf( "Constant: %s\n", yytext );}
+
+
+[ \t]+  	{}
+[\n]+ {lines++;}
+
+[+-]?0[0-9]* {printf("Illegal constant at line %d\n", lines); return -1;}
+
+[0-9~@#$%^][a-zA-Z0-9]{0,7}	{printf("Illegal identifier at line %d\n", lines); return -1;}
+
+. {printf("Illegal symbol %s at line %d\n", yytext, lines); return -1;}
+%%
+
+int main(int argc, char **argv )
+{ 
+    if ( argc > 1 )
+        yyin = fopen(argv[1], "r");
+    else
+        yyin = stdin;
+    yylex();
+
+}
